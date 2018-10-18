@@ -1,0 +1,153 @@
+body{
+    margin: 0px;
+}
+a{
+    color: #333333;
+    text-decoration: none;
+}
+.headerbar{
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    background: #f10;
+    z-index: 6000;
+}
+.el-header{
+    padding: 0;
+}
+.headerbar .el-col{
+    text-align: center;
+    line-height: 290%;
+    font-size: 1.4rem;
+}
+.headerbar .left{
+    float: left;
+    width: 20%;
+    color: #d3dce6;
+    padding-left: 1rem;
+}
+.headerbar .title{
+   text-align: center;
+   color: #dfdcdc;
+}
+.el-main{
+    padding: 0px;
+}
+.new_detaile{
+    padding: 0 0.5rem;
+}
+.el-carousel__container{
+    height: 170px;
+}
+.footerbar{
+    position: fixed;
+    bottom: 0;
+    background: #dfdcdc;
+    width: 100%;
+    padding-top: 0.5rem;
+    height: 54px;
+}
+.el-footer{
+    padding: 0px;
+}
+.footerbar .el-col{
+    text-align: center;
+    color: #333333;
+}
+.footerbar i{
+    font-size: 1.6rem;
+}
+.footerbar p{
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
+}
+.el-carousel__item img{
+    height: 170px;
+    width: 100%;
+}
+.el-carousel__item h3 {
+    color: #475669;
+    font-size: 18px;
+    opacity: 0.75;
+    line-height: 300px;
+    margin: 0;
+  }
+.el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+}
+  
+.el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+}
+
+.time {
+    font-size: 13px;
+    color: #999;
+  }
+  
+  .bottom {
+    margin-top: 13px;
+    line-height: 12px;
+  }
+
+  .button {
+    padding: 0;
+    float: right;
+  }
+
+  .image {
+    width: 100%;
+    display: block;
+  }
+  .clearfix:before,
+  .clearfix:after {
+      display: table;
+      content: "";
+  }
+  
+  .clearfix:after {
+      clear: both
+  }
+.newlist h3{
+    padding-left: 20px;
+}
+.newlist img{
+    max-height: 100px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.newlist ul{
+    padding: 0px;
+}
+.newlist ul li{
+    list-style-type: none;
+}
+.detaile h3{
+    text-align: center;
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+.detaile .pro{
+    text-align: center;
+    border-bottom: solid 1px #dfdfdf;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+/* zuixintongzhi */
+ul{
+    margin: 0px;
+}
+.fastnotice{
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    border: solid 1px #d3dce6;
+}
+.fastnotice h4{
+    padding: 1rem;
+    color: #475669;
+}
+.fastnotice .date{
+    color: #f10;
+    font-size: 0.5rem;
+}

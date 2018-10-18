@@ -1,0 +1,60 @@
+{
+  "name": "appai",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "serve:bs": "vue-cli-service serve:bs"
+  },
+  "dependencies": {
+    "element-ui": "^2.4.6",
+    "vue": "^2.5.17",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^7.0.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.1",
+    "@vue/cli-plugin-eslint": "^3.0.1",
+    "@vue/cli-plugin-typescript": "^3.0.1",
+    "@vue/cli-service": "^3.0.1",
+    "@vue/eslint-config-typescript": "^3.0.1",
+    "axios": "^0.18.0",
+    "typescript": "^3.0.0",
+    "vue-cli-plugin-axios": "^0.0.4",
+    "vue-cli-plugin-axios-ts": "^1.0.2",
+    "vue-cli-plugin-bootstrap": "^1.0.0-alpha.1",
+    "vue-cli-plugin-browser-sync": "^1.0.0-rc2",
+    "vue-cli-plugin-element-ui": "^1.1.4",
+    "vue-cli-plugin-vuex-module-generator": "^0.1.1",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended",
+      "@vue/typescript"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "typescript-eslint-parser"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
