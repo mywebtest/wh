@@ -7,19 +7,19 @@
               </span>
           </h3>
           <ul>
-              <li>
+              <li v-for="item in list" :key="item.id">
                   <el-row>
                     <el-col :span="24">
                         <router-link :to="{name:'detaile',params:{id:123,title:'新闻中心'}}">
                         <el-card v-if="btitle =='新闻中心' || btitle =='热点新闻'">
                             <el-col :span='10'>
-                                <img :src="fullimg" class="image"/>
+                                <img :src="item.thumb" class="image"/>
                             </el-col>
                             <el-col :span="14">
                                 <div style="padding: 0 0 14px 14px;">
-                                    <span>好吃的汉堡顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶</span>
+                                    <span>{{item.title}}</span>
                                     <div class="bottom clearfix">
-                                    <time class="time">{{ currentDate }}</time>
+                                    <time class="time">{{ item.addTime }}</time>
                                     </div>
                                 </div>
                             </el-col>
@@ -27,71 +27,9 @@
                         <el-card v-if="btitle =='市场行情'">
                             <el-col :span="24">
                                 <div style="padding: 0 0 14px 14px;">
-                                    <span>好吃的汉堡顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶</span>
+                                    <span>{{item.title}}</span>
                                     <div class="bottom clearfix">
-                                    <time class="time">{{ currentDate }}</time>
-                                    </div>
-                                </div>
-                            </el-col>
-                        </el-card>
-                        </router-link>
-                    </el-col>
-                </el-row>
-              </li>
-             <li>
-                  <el-row>
-                    <el-col :span="24">
-                        <router-link :to="{name:'detaile',params:{id:123,title:'新闻中心'}}">
-                        <el-card v-if="btitle =='新闻中心' || btitle =='热点新闻'">
-                            <el-col :span='10'>
-                                <img :src="fullimg" class="image"/>
-                            </el-col>
-                            <el-col :span="14">
-                                <div style="padding: 0 0 14px 14px;">
-                                    <span>好吃的汉堡顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶</span>
-                                    <div class="bottom clearfix">
-                                    <time class="time">{{ currentDate }}</time>
-                                    </div>
-                                </div>
-                            </el-col>
-                        </el-card>
-                        <el-card v-if="btitle =='市场行情'">
-                            <el-col :span="24">
-                                <div style="padding: 0 0 14px 14px;">
-                                    <span>好吃的汉堡顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶</span>
-                                    <div class="bottom clearfix">
-                                    <time class="time">{{ currentDate }}</time>
-                                    </div>
-                                </div>
-                            </el-col>
-                        </el-card>
-                        </router-link>
-                    </el-col>
-                </el-row>
-              </li>
-              <li>
-                  <el-row>
-                    <el-col :span="24">
-                        <router-link :to="{name:'detaile',params:{id:123,title:'新闻中心'}}">
-                        <el-card v-if="btitle =='新闻中心' || btitle =='热点新闻'">
-                            <el-col :span='10'>
-                                <img :src="fullimg" class="image"/>
-                            </el-col>
-                            <el-col :span="14">
-                                <div style="padding: 0 0 14px 14px;">
-                                    <span>好吃的汉堡顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶</span>
-                                    <div class="bottom clearfix">
-                                    <time class="time">{{ currentDate }}</time>
-                                    </div>
-                                </div>
-                            </el-col>
-                        </el-card>
-                        <el-card v-if="btitle =='市场行情'">
-                            <el-col :span="24">
-                                <div style="padding: 0 0 14px 14px;">
-                                    <span>好吃的汉堡顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶</span>
-                                    <div class="bottom clearfix">
-                                    <time class="time">{{ currentDate }}</time>
+                                    <time class="time">{{ item.addTime }}</time>
                                     </div>
                                 </div>
                             </el-col>
@@ -113,16 +51,20 @@ export default Vue.extend({
   data() {
     return {
       btitle: "",
-      currentDate: new Date(),
-      fullimg:
-        "http://www.17sucai.com/preview/952947/2017-12-09/webarchv3/assets/img/others/9.jpg"
+      list: []
     };
   },
   created() {
-    this.btitle = this.ftitle;
+    var that = this;
+    that.btitle = that.ftitle;
+    that.$axios.get(this.$store.state.api + "news", {}).then(function(data) {
+      if (that.btitle == "热点新闻") {
+        that.list = data.data.splice(1, 5);
+      } else {
+        that.list = data.data;
+      }
+    });
   },
-  mounted() {
-    this.currentDate = new Date();
-  }
+  mounted() {}
 });
 </script>
